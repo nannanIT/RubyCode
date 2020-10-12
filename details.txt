@@ -1,0 +1,25 @@
+[nil, "car", "bus"].all?
+=> false
+["nil", "car", "bus"].all?
+=> true
+[].all?
+=> true
+["nil", "car", "bus"].any?
+=> true
+[nil, "car", "bus"].any?
+=> true
+[nil].any?
+=> false
+[].any?
+=> false
+
+1. all?
+
+The method returns true if the block never returns false or nil.
+
+So since the block never gets called, of course it never returns false or nil, thus all returns true.
+
+2. The same goes for any?:
+
+The method returns true if the block ever returns a value other than false or nil.
+Since the block never gets called, it never returns a value other than false or nil, thus any returns false.
