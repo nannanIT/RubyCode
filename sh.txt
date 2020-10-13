@@ -1,0 +1,46 @@
+#!/bin/sh
+
+-e filename 如果 filename存在，则为真
+-d filename 如果 filename为目录，则为真
+-f filename 如果 filename为常规文件，则为真
+-L filename 如果 filename为符号链接，则为真
+-r filename 如果 filename可读，则为真
+-w filename 如果 filename可写，则为真
+-x filename 如果 filename可执行，则为真
+-s filename 如果文件长度不为0，则为真
+-h filename 如果文件是软链接，则为真
+
+Linux pwd（英文全拼：print work directory） 命令用于显示工作目录。
+执行 pwd 指令可立刻得知您目前所在的工作目录的绝对路径名称。
+
+#判断文件存在，判断是否为文件夹等
+testPath="/Volumes/MacBookProHD/Mr.Wen/08 shell命令"
+testFile="/Volumes/MacBookProHD/Mr.Wen/08 shell命令/fileWen"
+
+#判断文件夹是否存在 -d
+if [[ ! -d "$testPath" ]]; then
+ echo "文件夹不存在"
+else
+ echo "文件夹存在"
+fi
+
+#判断文件夹是否存在，并且具有可执行权限
+if [[ ! -x "$testFile" ]]; then
+ echo "文件不存在并且没有可执行权限"
+else
+ echo "文件存在并有可执行权限"
+fi
+
+#判断文件是否存在
+if [[ ! -f "$testFile" ]]; then
+ echo "文件不存在"
+else
+ echo "文件存在"
+fi
+
+# 如果存在某文件，则删除
+if [ -f trials ]; then rm ${result_path}trials; fi
+# 如果没有文件夹，则创建
+if [ ! -d $result_name ];then
+   mkdir -p $result_name
+fi
