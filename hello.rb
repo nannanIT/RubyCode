@@ -44,3 +44,7 @@ puts :"prebuild".object_id
 puts "prebuild".object_id
 puts "prebuild".object_id
 puts "prebuild".object_id
+
+# chdir 作用：It changes the working directory of the running program. (But not physically in the sense that when you exit, the prompt will show a different directory) 只改变逻辑中的路径，并不是真实的改变当前命令窗中的地址
+Dir.chdir('../')
+Dir::foreach('./') {|f| puts f}
